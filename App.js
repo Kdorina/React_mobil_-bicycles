@@ -26,7 +26,7 @@ export default function App() {
 
     <View style={styles.container}>
 
-      <Text style={styles.title}>Kerékpár</Text>
+      <Text style={styles.title}>Kerékpárok</Text>
 
         <View style={styles.content}>
 
@@ -61,7 +61,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#4A90E2',
+    backgroundColor: '#FF8F74',
    justifyContent:'center',
    alignItems:'center'
    
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   title:{
     textAlign:'center',
     marginTop:60,
-    fontSize:20,
+    fontSize:25,
     fontWeight:500,
   },
   content:{
@@ -82,28 +82,29 @@ const styles = StyleSheet.create({
   itemName: {
     flexDirection: 'row',
     justifyContent:'space-between',
-    backgroundColor:'#afcaeb',
+    backgroundColor:'#E5FF74',
     borderRadius:25,
+    fontSize:14,
+    fontWeight:600,
   },
   space: {
     margin:5,
     padding:10,
   },
 
-  items: {
-    flexDirection:'row',
-    justifyContent:'space-between',     
-  
-  },
-
   background:{
     display:'flex',
     marginTop:10,
-    backgroundColor:'#afcaeb',
+    backgroundColor:'#FFD474',
     borderRadius:25,
     maxHeight:350,
 
   },
+  items: {
+    flexDirection:'row',
+    justifyContent:'space-between',     
+  },
+ 
   text: {
     margin:5,
     flex:1,
