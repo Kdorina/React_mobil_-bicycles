@@ -1,8 +1,18 @@
+/*
+* File: App.js
+* Author: Kovács Dorina
+* Copyright: 2023, Kovács Dorina
+* Group: Szoft II/N
+* Date: 2023-04-25
+* Github: https://github.com/Kdorina/
+* Licenc: GNU GPL
+*/
+
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import { FlatList } from 'react-native-web';
-
+import images from "./assets/images/bike2.jpg";
 export default function App() {
   const[bike, setBikes]=useState([]);
   function bikes(){
@@ -24,36 +34,39 @@ export default function App() {
   
     
 
-    <View style={styles.container}>
+    <View style={{backgroundImage:`url(${images})`,
+    backgroundRepeat: 'no-repeat',
+    flex:1, backgroundSize:'cover',
+    alignItems:'center'}} >
 
-      <Text style={styles.title}>Kerékpárok</Text>
+      <Text style={styles.title}>Cycles</Text>
 
         <View style={styles.content}>
 
           <View style={styles.itemName}>
             <p style={styles.space}>Name</p>
             <p style={styles.space}>Wheel</p>
-            <p style={styles.space}>Use age</p>
+            <p style={styles.space}>Useage</p>
             <p style={styles.space}>Price</p>
           </View>
           
-                <FlatList  style={styles.background}
-          data={bike}
-          renderItem={ ({item}) => (
-            <View style={styles.items}>
-          
-                <Text style={styles.text}>{item.name}</Text>
-                <Text style={styles.text}>{item.wheel}</Text>
-                <Text style={styles.text}>{item.usage}</Text>
-                <Text style={styles.text}>{item.price}</Text>
-          
-            </View>
-          
-          )}
-           />
+          <FlatList  style={styles.background}
+            data={bike}
+            renderItem={ ({item}) => (
+              <View style={styles.items}>
+            
+                  <Text style={styles.text}>{item.name}</Text>
+                  <Text style={styles.text}>{item.wheel}</Text>
+                  <Text style={styles.text}>{item.usage}</Text>
+                  <Text style={styles.text}>{item.price}</Text>
+            
+              </View>
+              
+            )}/>
                 
-                <StatusBar style="auto" />
+          <StatusBar style="auto" />
         </View>
+        <footer style={styles.footer}> ©Kovács Dorina</footer>
     </View>
   );
 }
@@ -63,14 +76,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FF8F74',
    justifyContent:'center',
-   alignItems:'center'
+   alignItems:'center',
    
   },
   title:{
     textAlign:'center',
     marginTop:60,
     fontSize:25,
-    fontWeight:500,
+    fontWeight:700,
+    color:'white',
   },
   content:{
     flex: 1,
@@ -95,22 +109,31 @@ const styles = StyleSheet.create({
   background:{
     display:'flex',
     marginTop:10,
-    backgroundColor:'#FFD474',
+    backgroundColor:'black',
     borderRadius:25,
     maxHeight:350,
 
   },
   items: {
     flexDirection:'row',
-    justifyContent:'space-between',     
+    justifyContent:'space-between',  
+    
   },
  
   text: {
     margin:5,
     flex:1,
     padding:10,
-    justifyContent:'center'
-
+    justifyContent:'center',
+    color:'white',  
+    fontWeight:500,
   },
+  footer:{
+    width:400,
+    marginBottom:10,
+    color:'#fff',
+    fontFamily:'Arial',
+    textAlign:'center'
+  }
   
 });
