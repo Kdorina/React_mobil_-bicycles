@@ -39,7 +39,7 @@ export default function App() {
     flex:1, backgroundSize:'cover',
     alignItems:'center'}} >
 
-      <Text style={styles.title}>Cycles</Text>
+      <Text style={styles.title}>Bicycles</Text>
 
         <View style={styles.content}>
 
