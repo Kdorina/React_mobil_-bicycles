@@ -21,49 +21,39 @@ export default function App() {
   }, []);
 
   return (
+  
+    
+
     <View style={styles.container}>
-      <Text>Kerékpár</Text>
 
-{/*       <div>
-            <table>
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                  </tr>
-                </thead>
+      <Text style={styles.title}>Kerékpár</Text>
 
-                <tbody>
-                  <tr>
-                    <td>{item.name}</td>
-                    <td>{item.wheel}</td>
-                    <td>{item.usage}</td>
-                    <td>{item.price}</td>
-                  </tr>
-                </tbody>
-            </table>
-            
-          </div> */}
-        <View style={styles.itemName}>
-          <th style={styles.space}>Name</th>
-          <th style={styles.space}>Wheel</th>
-          <th style={styles.space}>Use age</th>
-          <th style={styles.space}>Price</th>
-       </View>
+        <View style={styles.content}>
 
-      <FlatList
-        data={bike}
-        renderItem={ ({item}) => (
-          <View style={styles.item}>
-            <td style={styles.data}>{item.name}</td>
-            <td style={styles.data}>{item.wheel}</td>
-            <td style={styles.data}>{item.usage}</td>
-            <td style={styles.data}>{item.price}</td>
+          <View style={styles.itemName}>
+            <p style={styles.space}>Name</p>
+            <p style={styles.space}>Wheel</p>
+            <p style={styles.space}>Use age</p>
+            <p style={styles.space}>Price</p>
           </View>
           
-        )}
-         />
-      
-      <StatusBar style="auto" />
+                <FlatList  style={styles.background}
+          data={bike}
+          renderItem={ ({item}) => (
+            <View style={styles.items}>
+          
+                <Text style={styles.text}>{item.name}</Text>
+                <Text style={styles.text}>{item.wheel}</Text>
+                <Text style={styles.text}>{item.usage}</Text>
+                <Text style={styles.text}>{item.price}</Text>
+          
+            </View>
+          
+          )}
+           />
+                
+                <StatusBar style="auto" />
+        </View>
     </View>
   );
 }
@@ -71,19 +61,55 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#4A90E2',
+   justifyContent:'center',
+   alignItems:'center'
+   
+  },
+  title:{
+    textAlign:'center',
+    marginTop:60,
+    fontSize:20,
+    fontWeight:500,
+  },
+  content:{
+    flex: 1,
+    margin:30,
+    marginTop:50,
+    fontFamily:'arial',
+    
   },
   itemName: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent:'space-between',
+    backgroundColor:'#afcaeb',
+    borderRadius:25,
   },
   space: {
-    margin:10
+    margin:5,
+    padding:10,
   },
-  item: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+
+  items: {
+    flexDirection:'row',
+    justifyContent:'space-between',     
+  
   },
+
+  background:{
+    display:'flex',
+    marginTop:10,
+    backgroundColor:'#afcaeb',
+    borderRadius:25,
+    maxHeight:350,
+
+  },
+  text: {
+    margin:5,
+    flex:1,
+    padding:10,
+    justifyContent:'center'
+
+  },
+  
 });
