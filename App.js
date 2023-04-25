@@ -46,7 +46,7 @@ export default function App() {
           <View style={styles.itemName}>
             <p style={styles.space}>Name</p>
             <p style={styles.space}>Wheel</p>
-            <p style={styles.space}>Useage</p>
+            <p style={styles.space}>Usage</p>
             <p style={styles.space}>Price</p>
           </View>
           
